@@ -1,0 +1,299 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cc99ff; /* Lilás específico para o fundo da página (mantido) */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #ffffff; /* Fundo branco puro para o container principal */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Sombra suave para destacar o container */
+    width: 100%;
+    max-width: 700px;
+}
+
+h1, h2 {
+    color: #6a5acd; /* Lilás médio para títulos (mantido) */
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.input-section, .search-section {
+    margin-bottom: 25px;
+}
+
+input[type="text"], textarea {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #dcdcdc; /* Borda cinza muito claro para inputs (suave no fundo branco) */
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #ffffff; /* Fundo branco puro para inputs */
+    color: #4a4a4a; /* Texto cinza escuro */
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    background-color: #87CEEB; /* Azul céu claro para o botão principal (mantido) */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #9ACBE6; /* Azul céu um pouco mais claro no hover (mantido) */
+    transform: translateY(-1px);
+}
+
+.search-section button {
+    display: inline-block;
+    width: auto;
+    margin-right: 10px;
+    font-size: 1rem;
+    padding: 10px 18px;
+}
+
+.search-section button:last-child {
+    margin-right: 0;
+}
+
+#clearSearchButton {
+    background-color: #79B8D1; /* Azul da paleta, um pouco mais escuro para limpar busca (mantido) */
+    color: white;
+}
+
+#clearSearchButton:hover {
+    background-color: #8CC9E1; /* Um pouco mais claro no hover (mantido) */
+}
+
+
+hr {
+    border: 0;
+    border-top: 1px solid #e0e0e0; /* Linha divisória em cinza muito claro (suave no fundo branco) */
+    margin: 35px 0;
+}
+
+/* Estilos para a régua de humor */
+.mood-selector {
+    text-align: center;
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #f8f8f8; /* Fundo quase branco para a régua, um toque sutil */
+    border-radius: 10px;
+    border: 1px solid #e0e0e0; /* Borda suave em cinza */
+}
+
+.mood-selector .mood-label {
+    display: block;
+    font-size: 1.2em;
+    color: #6a5acd; /* Lilás para o label (mantido) */
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.mood-selector .emojis {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.emoji-option {
+    font-size: 2.5em;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+    filter: grayscale(80%);
+    opacity: 0.7;
+}
+
+.emoji-option:hover {
+    transform: scale(1.25);
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.emoji-option.selected {
+    transform: scale(1.35);
+    filter: grayscale(0%);
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.diary-entry {
+    background-color: #ffffff; /* Fundo branco puro para as entradas */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 5px solid #87CEEB; /* Borda lateral com o azul dos botões (mantido) */
+    word-wrap: break-word;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra sutil para cada entrada */
+}
+
+.diary-entry .mood-emoji {
+    font-size: 2.8em;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.diary-entry-content {
+    flex-grow: 1;
+}
+
+.diary-entry h3 {
+    margin: 0 0 8px 0;
+    color: #6a5acd; /* Lilás para o título da entrada (mantido) */
+    font-size: 1.4em;
+}
+
+.diary-entry p {
+    margin: 0 0 10px 0;
+    line-height: 1.7;
+    color: #5a5a5a; /* Texto cinza escuro (mantido) */
+}
+
+.diary-entry .date {
+    font-size: 0.9em;
+    color: #8c8c8c; /* Data em cinza médio (mantido) */
+    margin-bottom: 8px;
+    display: block;
+}
+
+.diary-entry .actions {
+    margin-top: 15px;
+    text-align: right;
+}
+
+.diary-entry .actions button {
+    background-color: #87CEEB; /* Botões de ação com o mesmo azul principal dos botões (mantido) */
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85em;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+    width: auto;
+    margin-bottom: 0;
+}
+
+.diary-entry .actions .edit-button {
+    background-color: #7EC0EE; /* Azul um pouco diferente para editar (mantido) */
+    color: white;
+}
+
+.diary-entry .actions .edit-button:hover {
+    background-color: #92CDEC;
+}
+
+.diary-entry .actions .delete-button {
+    background-color: #6495ED; /* Azul mais intenso para excluir (mantido) */
+    color: white;
+}
+
+.diary-entry .actions .delete-button:hover {
+    background-color: #7AB1F2;
+}
+
+/* --- Responsividade para dispositivos móveis --- */
+@media (max-width: 600px) {
+    body {
+        margin: 0; /* Remove margem do body para ocupar a tela toda */
+    }
+
+    .container {
+        border-radius: 0; /* Remove bordas arredondadas para ocupar a tela toda */
+        box-shadow: none; /* Remove sombra para um visual mais limpo em mobile */
+        padding: 20px; /* Reduz padding interno do container */
+    }
+
+    h1, h2 {
+        font-size: 1.8em; /* Reduz tamanho dos títulos */
+        margin-bottom: 20px;
+    }
+
+    input[type="text"], textarea {
+        width: calc(100% - 20px); /* Ajusta largura novamente, considerando o novo padding do container */
+        font-size: 0.95rem; /* Leve redução no tamanho da fonte dos inputs */
+    }
+
+    button {
+        padding: 12px 15px; /* Reduz padding dos botões */
+        font-size: 1em; /* Reduz tamanho da fonte dos botões */
+    }
+
+    .search-section {
+        display: flex; /* Transforma a seção de busca em flexbox */
+        flex-wrap: wrap; /* Permite que os itens quebrem linha */
+        gap: 10px; /* Espaçamento entre os elementos */
+    }
+
+    .search-section input[type="text"] {
+        flex-grow: 1; /* Permite que o input ocupe o espaço restante */
+        margin-bottom: 0; /* Remove margem inferior para alinhamento */
+    }
+
+    .search-section button {
+        width: calc(50% - 5px); /* Dois botões por linha */
+        margin-right: 0; /* Remove margem extra */
+        margin-bottom: 0; /* Remove margem extra */
+    }
+
+    .mood-selector .emojis {
+        gap: 10px; /* Reduz espaçamento entre emojis */
+    }
+
+    .emoji-option {
+        font-size: 2em; /* Reduz tamanho dos emojis na seleção */
+    }
+
+    .diary-entry {
+        flex-direction: column; /* Coloca o emoji e o conteúdo da entrada um abaixo do outro */
+        align-items: flex-start; /* Alinha o conteúdo à esquerda */
+        gap: 8px; /* Reduz o espaçamento */
+        padding: 15px; /* Reduz padding da entrada */
+    }
+
+    .diary-entry .mood-emoji {
+        font-size: 2.2em; /* Reduz tamanho do emoji na entrada */
+        margin-bottom: 5px; /* Adiciona uma pequena margem abaixo do emoji */
+    }
+
+    .diary-entry .actions {
+        text-align: left; /* Alinha os botões de ação à esquerda */
+        width: 100%; /* Ocupa a largura total */
+        margin-top: 10px;
+    }
+
+    .diary-entry .actions button {
+        margin-left: 0; /* Remove margem à esquerda */
+        margin-right: 10px; /* Adiciona margem à direita entre botões */
+        width: auto; /* Deixa os botões com largura automática */
+        padding: 8px 12px; /* Ajusta padding */
+        font-size: 0.8em; /* Ajusta tamanho da fonte */
+    }
+}

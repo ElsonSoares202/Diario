@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Diário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Meu Diário</h1>
+
+        <div class="input-section">
+            <div class="mood-selector">
+                <span class="mood-label">Meu humor hoje:</span>
+                <div class="emojis">
+                    <span class="emoji-option" data-mood="animado">🤩</span>
+                    <span class="emoji-option" data-mood="feliz">😄</span>
+                    <span class="emoji-option" data-mood="neutro">😐</span>
+                    <span class="emoji-option" data-mood="triste">🙁</span>
+                    <span class="emoji-option" data-mood="bravo">😡</span>
+                    <span class="emoji-option" data-mood="chorando">😭</span>
+                    <span class="emoji-option" data-mood="derretendo">🫠</span>
+                    
+                    
+                </div>
+                <input type="hidden" id="selectedMood" value=""> </div>
+            <input type="text" id="diaryTitle" placeholder="Título da entrada...">
+            <textarea id="diaryEntry" placeholder="Escreva sua entrada aqui..."></textarea>
+            <button id="saveButton">Salvar Entrada</button>
+        </div>
+
+        <hr>
+
+        <div class="search-section">
+            <input type="text" id="searchInput" placeholder="Buscar por título...">
+            <button id="searchButton">Buscar</button>
+            <button id="clearSearchButton">Limpar Busca</button>
+        </div>
+
+        <hr>
+
+        <h2>Minhas Entradas</h2>
+        <div id="diaryEntriesContainer">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
