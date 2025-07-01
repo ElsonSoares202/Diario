@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #cc99ff; /* Lilás específico para o fundo da página (mantido) */
+    background-color: #cc99ff; /* Lilás específico para o fundo da página */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -19,7 +19,7 @@ body {
 }
 
 h1, h2 {
-    color: #6a5acd; /* Lilás médio para títulos (mantido) */
+    color: #6a5acd; /* Lilás médio para títulos */
     text-align: center;
     margin-bottom: 25px;
     font-weight: 600;
@@ -49,20 +49,20 @@ button {
     display: block;
     width: 100%;
     padding: 14px 20px;
-    background-color: #87CEEB; /* Azul céu claro para o botão principal (mantido) */
+    background-color: #87CEEB; /* Azul céu claro para o botão principal */
     color: white;
     border: none;
     border-radius: 6px;
     font-size: 1.1rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.1s ease;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     letter-spacing: 0.5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background-color: #9ACBE6; /* Azul céu um pouco mais claro no hover (mantido) */
+    background-color: #9ACBE6; /* Azul céu um pouco mais claro no hover */
     transform: translateY(-1px);
 }
 
@@ -79,14 +79,24 @@ button:hover {
 }
 
 #clearSearchButton {
-    background-color: #79B8D1; /* Azul da paleta, um pouco mais escuro para limpar busca (mantido) */
+    background-color: #79B8D1; /* Azul da paleta, um pouco mais escuro para limpar busca */
     color: white;
 }
 
 #clearSearchButton:hover {
-    background-color: #8CC9E1; /* Um pouco mais claro no hover (mantido) */
+    background-color: #8CC9E1; /* Um pouco mais claro no hover */
 }
 
+/* NOVO: Estilo para o botão de download */
+#downloadEntriesButton {
+    background-color: #6495ED; /* Um azul um pouco mais escuro para o botão de download */
+    color: white;
+    margin-top: 16px; /* Espaço acima do botão */
+}
+
+#downloadEntriesButton:hover {
+    background-color: #7AB1F2;
+}
 
 hr {
     border: 0;
@@ -107,7 +117,7 @@ hr {
 .mood-selector .mood-label {
     display: block;
     font-size: 1.2em;
-    color: #6a5acd; /* Lilás para o label (mantido) */
+    color: #6a5acd; /* Lilás para o label */
     margin-bottom: 12px;
     font-weight: bold;
 }
@@ -144,7 +154,7 @@ hr {
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
-    border-left: 5px solid #87CEEB; /* Borda lateral com o azul dos botões (mantido) */
+    border-left: 5px solid #87CEEB; /* Borda lateral com o azul dos botões */
     word-wrap: break-word;
     position: relative;
     display: flex;
@@ -165,19 +175,19 @@ hr {
 
 .diary-entry h3 {
     margin: 0 0 8px 0;
-    color: #6a5acd; /* Lilás para o título da entrada (mantido) */
+    color: #6a5acd; /* Lilás para o título da entrada */
     font-size: 1.4em;
 }
 
 .diary-entry p {
     margin: 0 0 10px 0;
     line-height: 1.7;
-    color: #5a5a5a; /* Texto cinza escuro (mantido) */
+    color: #5a5a5a; /* Texto cinza escuro */
 }
 
 .diary-entry .date {
     font-size: 0.9em;
-    color: #8c8c8c; /* Data em cinza médio (mantido) */
+    color: #8c8c8c; /* Data em cinza médio */
     margin-bottom: 8px;
     display: block;
 }
@@ -188,7 +198,7 @@ hr {
 }
 
 .diary-entry .actions button {
-    background-color: #87CEEB; /* Botões de ação com o mesmo azul principal dos botões (mantido) */
+    background-color: #87CEEB; /* Botões de ação com o mesmo azul principal dos botões */
     color: white;
     border: none;
     padding: 8px 14px;
@@ -202,8 +212,9 @@ hr {
 }
 
 .diary-entry .actions .edit-button {
-    background-color: #7EC0EE; /* Azul um pouco diferente para editar (mantido) */
+    background-color: #7EC0EE; /* Azul um pouco diferente para editar */
     color: white;
+    margin-bottom: 8px;
 }
 
 .diary-entry .actions .edit-button:hover {
@@ -211,89 +222,128 @@ hr {
 }
 
 .diary-entry .actions .delete-button {
-    background-color: #6495ED; /* Azul mais intenso para excluir (mantido) */
+    background-color: #6495ED; /* Azul mais intenso para excluir */
     color: white;
+    margin-bottom: 8px;
 }
 
 .diary-entry .actions .delete-button:hover {
     background-color: #7AB1F2;
 }
 
-/* --- Responsividade para dispositivos móveis --- */
-@media (max-width: 600px) {
+/* NOVO: Estilo para o título da entrada que é clicável */
+.diary-entry .entry-title {
+    cursor: pointer; /* Indica que é clicável */
+    text-decoration: none; /* Remove sublinhado padrão se houver */
+    transition: color 0.2s ease; /* Transição suave na cor */
+}
+
+.diary-entry .entry-title:hover {
+    color: #4a3c94; /* Um lilás um pouco mais escuro no hover */
+}
+
+
+/* --- Responsividade para dispositivos com largura máxima de 500px --- */
+@media (max-width: 500px) {
     body {
-        margin: 0; /* Remove margem do body para ocupar a tela toda */
+        margin: 0;
     }
 
     .container {
-        border-radius: 0; /* Remove bordas arredondadas para ocupar a tela toda */
-        box-shadow: none; /* Remove sombra para um visual mais limpo em mobile */
-        padding: 20px; /* Reduz padding interno do container */
+        border-radius: 0;
+        box-shadow: none;
+        padding: 20px;
     }
 
     h1, h2 {
-        font-size: 1.8em; /* Reduz tamanho dos títulos */
+        font-size: 1.8em;
         margin-bottom: 20px;
     }
 
     input[type="text"], textarea {
-        width: calc(100% - 20px); /* Ajusta largura novamente, considerando o novo padding do container */
-        font-size: 0.95rem; /* Leve redução no tamanho da fonte dos inputs */
+        width: calc(100% - 20px);
+        font-size: 0.95rem;
     }
 
     button {
-        padding: 12px 15px; /* Reduz padding dos botões */
-        font-size: 1em; /* Reduz tamanho da fonte dos botões */
+        padding: 12px 15px;
+        font-size: 1em;
     }
 
     .search-section {
-        display: flex; /* Transforma a seção de busca em flexbox */
-        flex-wrap: wrap; /* Permite que os itens quebrem linha */
-        gap: 10px; /* Espaçamento entre os elementos */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
     .search-section input[type="text"] {
-        flex-grow: 1; /* Permite que o input ocupe o espaço restante */
-        margin-bottom: 0; /* Remove margem inferior para alinhamento */
+        flex-grow: 1;
+        margin-bottom: 0;
     }
 
     .search-section button {
-        width: calc(50% - 5px); /* Dois botões por linha */
-        margin-right: 0; /* Remove margem extra */
-        margin-bottom: 0; /* Remove margem extra */
+        width: calc(50% - 5px);
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    /* NOVO: Ajuste para o botão de download em mobile */
+    #downloadEntriesButton {
+        width: 100%; /* Ocupa a largura total em mobile */
+        margin-top: 10px; /* Ajusta margem */
     }
 
     .mood-selector .emojis {
-        gap: 10px; /* Reduz espaçamento entre emojis */
+        gap: 10px;
     }
 
     .emoji-option {
-        font-size: 2em; /* Reduz tamanho dos emojis na seleção */
+        font-size: 2em;
     }
 
+    /* AJUSTE: Ajustes para a entrada do diário em mobile */
     .diary-entry {
-        flex-direction: column; /* Coloca o emoji e o conteúdo da entrada um abaixo do outro */
-        align-items: flex-start; /* Alinha o conteúdo à esquerda */
-        gap: 8px; /* Reduz o espaçamento */
-        padding: 15px; /* Reduz padding da entrada */
+        display: flex; /* Mantém flex para alinhamento */
+        flex-direction: row; /* Emoji e conteúdo lado a lado */
+        align-items: flex-start; /* Alinha os itens ao topo */
+        gap: 10px; /* Espaçamento entre emoji e texto */
+        padding: 15px;
     }
 
     .diary-entry .mood-emoji {
-        font-size: 2.2em; /* Reduz tamanho do emoji na entrada */
-        margin-bottom: 5px; /* Adiciona uma pequena margem abaixo do emoji */
+        font-size: 2em; /* Reduz um pouco o tamanho do emoji */
+        margin-bottom: 0; /* Remove margem inferior */
+        flex-shrink: 0; /* Impede que o emoji encolha */
+    }
+
+    .diary-entry-content {
+        flex-grow: 1; /* Permite que o texto ocupe o restante do espaço */
+        overflow: hidden; /* Garante que o texto não quebre o layout */
+    }
+
+    .diary-entry h3 {
+        font-size: 1.2em; /* Reduz um pouco o título no mobile */
+        margin-top: 0; /* Remove margem superior extra */
+    }
+
+    .diary-entry p {
+        font-size: 0.9em; /* Reduz um pouco o texto no mobile */
     }
 
     .diary-entry .actions {
-        text-align: left; /* Alinha os botões de ação à esquerda */
-        width: 100%; /* Ocupa a largura total */
-        margin-top: 10px;
+        margin-top: 10px; /* Mantém a margem superior */
+        text-align: left;
+        width: 100%;
+        display: flex; /* Alinha os botões de ação em linha */
+        flex-wrap: wrap; /* Permite que os botões quebrem a linha se necessário */
+        gap: 5px; /* Reduz o espaço entre os botões de ação */
     }
 
     .diary-entry .actions button {
-        margin-left: 0; /* Remove margem à esquerda */
-        margin-right: 10px; /* Adiciona margem à direita entre botões */
-        width: auto; /* Deixa os botões com largura automática */
-        padding: 8px 12px; /* Ajusta padding */
-        font-size: 0.8em; /* Ajusta tamanho da fonte */
+        font-size: 0.75em; /* Reduz ainda mais a fonte dos botões de ação */
+        padding: 5px 8px; /* Reduz o padding dos botões de ação */
+        margin-right: 5px;
+        margin-bottom: 5px;
+        width: auto;
     }
 }
